@@ -1,7 +1,7 @@
 class SortingAlgorithms
 
   def createArray(size)
-
+    Array.new(size) { rand(0..100) }
   end
 
   def selectionSort(arr)
