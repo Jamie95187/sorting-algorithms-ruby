@@ -44,4 +44,19 @@ class SortingAlgorithms
     arr
   end
 
+  def bubbleSort(arr)
+    # Repeatedly swapping adjacent elements until sorted
+    # Note this does not check if there have been swaps made.
+    (arr.length-1).times do
+      for i in 0...arr.length-1 do
+        if arr[i] > arr[i+1]
+          temp = arr[i]
+          arr[i] = arr[i+1]
+          arr[i+1] = temp
+        end
+      end
+    end
+    arr
+  end
+
 end
