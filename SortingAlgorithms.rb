@@ -1,9 +1,5 @@
 class SortingAlgorithms
 
-  def displayArray(arr)
-    p arr
-  end
-
   def createArray(size)
     Array.new(size) { rand(0..100) }
   end
@@ -75,6 +71,41 @@ class SortingAlgorithms
         break if swapped == false
     end
     arr
+  end
+
+  def quickSort(arr, low, high)
+    # Divide and conquer algorithm that puts the pivot in the correct place
+    # Sorts by using the recursive function and calls itself
+    if (low < high)
+      # Partition index after calling partitionQuickSort, pi is at the right place
+      pi = partitionQuickSort(arr, low, high)
+
+      # Quick sort before the pivot position
+      quickSort(arr, low, pi - 1)
+      # Quick sort after the pivot position
+      quickSort(arr, pi, high)
+    end
+
+  end
+
+  def partitionQuickSort(arr, low, high)
+    # Element to be placed at the right position
+    pivot = arr[high]
+
+    i = low - 1
+
+    for j in low...high
+      if arr[j] < pivot
+        i += 1
+        temp = arr[j]
+        arr[j] = arr[i]
+        arr[i] = temp
+      end
+    end
+    temp = arr[high]
+    arr[high] = arr[i+1]
+    arr[i+1] = temp
+    return i + 1
   end
 
 end
