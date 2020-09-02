@@ -108,4 +108,31 @@ class SortingAlgorithms
     return i + 1
   end
 
+  def countingSort(arr)
+
+    # The output couting array that will have the sorted array
+    output = []
+
+    # Create count array to store count of individual characters set each
+    # Size is the range of the characters that need to be sorted
+    count = Array.new(100) { 0 }
+    # Store count for each character
+    for i in 0...arr.length
+      count[arr[i]] = count[arr[i]] + 1
+    end
+
+    # Loop through the count and add each element to the output
+    for i in 0...count.length
+      if count[i] != 0
+        while count[i] != 0
+          output.push(i)
+          count[i] = count[i] - 1
+        end
+      end
+    end
+
+    output
+
+  end
+
 end
