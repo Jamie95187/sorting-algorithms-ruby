@@ -185,4 +185,54 @@ class SortingAlgorithms
 
   end
 
+  # Merge two sorted arrays together
+  def merge(a, b)
+
+    mergedArray = []
+    aIndex = 0
+    bIndex = 0
+
+    while (aIndex < a.length && bIndex < b.length)
+      if (a[aIndex] < b[bIndex])
+        mergedArray.push(a[aIndex])
+        aIndex = aIndex + 1
+      else
+        mergedArray.push(b[bIndex])
+        bIndex = bIndex + 1
+      end
+    end
+
+    # At this point we have either added all items from b or a array
+
+    while (aIndex < a.length)
+      mergedArray.push(a[aIndex])
+      aIndex = aIndex + 1
+    end
+
+    while (bIndex < b.length)
+      mergedArray.push(b[bIndex])
+      bIndex = bIndex + 1
+    end
+
+    mergedArray
+
+  end
+
+  def mergeSort(arr)
+
+    n = arr.length
+
+    return arr if n == 1
+
+    # Divide array into two halves
+    arrayOne = arr[0...(n/2)+n%2]
+    arrayTwo = arr[(n/2)+n%2...n]
+
+    arrayOne = mergeSort(arrayOne)
+    arrayTwo = mergeSort(arrayTwo)
+
+    merge(arrayOne, arrayTwo)
+
+  end
+
 end
