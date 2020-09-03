@@ -135,4 +135,54 @@ class SortingAlgorithms
 
   end
 
+  def heapSort(arr)
+
+    n = arr.length
+
+    # Build a heap
+    for i in 0..(n/2)-1
+      heapify(arr, n, (n/2)-1-i)
+    end
+
+    # One by one extract an element form heap
+    for i in 1...n-1
+
+      # Move current root to end
+      temp = arr[0]
+      arr[0] = arr[n-i]
+      arr[n-i] = temp
+
+      # call max heapfiy on the reduced heap
+      heapify(arr, n-i, 0)
+    end
+
+  end
+
+  def heapify(arr, n, i)
+    largest = i
+    l = 2 * i + 1
+    r = 2 * i + 2
+
+    # Left child is larger than root
+    if(l < n && arr[l] > arr[largest])
+      largest = l
+    end
+
+    # Right child is larger than largest
+    if(r < n && arr[r] > arr[largest])
+      largest = r
+    end
+
+    # If largest is not root
+    if (largest != i)
+      swap = arr[i]
+      arr[i] = arr[largest]
+      arr[largest] = swap
+
+      # Recursively heapify the affected sub-tree
+      heapify(arr, n, largest)
+    end
+
+  end
+
 end
