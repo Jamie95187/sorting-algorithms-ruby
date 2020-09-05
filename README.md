@@ -45,3 +45,33 @@ Cons: Has a very bad worse case of O(n^2). Not good for semi-ordered lists
 
 Best Case: O(nlog(n)) </br>
 Worst Case: O(n^2)
+
+### Counting Sort
+
+Stores the counts of each occurrence of the item. Loops through the count array and adds it to the output array. Best used for small data sets. Data type must be integers.
+
+Pros: Linear time for sorting small data set </br>
+Cons: Counting sort assumes that each of the n input elements is an integer in the range 0 to k, for some integer k.
+
+Best Case: O(n+k) </br>
+Worse Case: O(n+k)
+
+### Heap Sort
+
+Heap sort involves building a heap data structure and utilizing the heap to sort the array. The heap data structure is always a complete binary tree.
+
+Pros: Memory usage is less. Consistent performance worse and best cases are the same </br>
+Cons: Unstable sort (if there are two or more objects with equal keys which don't appear in same order before and after sorting)
+
+Best Case: O(nlog(n)) </br>
+Worse Case: O(nlog(n))
+
+### Merge Sort
+
+Merges two sorted arrays together. It is also divide and conquer algorithm.
+
+Pros: Worst, best, average case has same time complexity, which makes it very efficient. Stable sort </br>
+Cons: Not as space-efficient as other sorting algorithms e.g. block sort
+
+Best Case: O(nlog(n)) </br>
+Worse Case: O(nlog(n))
