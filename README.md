@@ -75,3 +75,18 @@ Cons: Not as space-efficient as other sorting algorithms e.g. block sort
 
 Best Case: O(nlog(n)) </br>
 Worse Case: O(nlog(n))
+
+## Comparison
+
+| Algorithm | Best Case | Worst Case |
+---
+| Selection Sort | O(n^2) | O(n^2) |
+| Insertion Sort | O(n^2) | O(n^2) |
+| Bubble Sort | O(n^2) | O(n^2) |
+| Bubble Sort With Check | O(n) | O(n^2) |
+| Counting Sort | O(n+k) | O(n+k) |
+| Quick Sort | O(nlog(n)) | O(n^2) |
+| Heap Sort | O(nlog(n)) | O(nlog(n)) |
+| Merge Sort | O(nlog(n)) | O(nlog(n)) |
+
+The best algorithm to use depends on the data that needs to be sorted. For example Counting Sort only works if the data is of an integer type. Of the three selection, bubble and insertion sort the most common one used is insertion sort. 
